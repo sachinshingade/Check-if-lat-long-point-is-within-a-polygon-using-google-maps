@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Geolocation</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <style>
+    html,body{
+        height: 100%;
+        width: 100%;
+        /* margin: 0px;
+        padding: 0px */
+    }
+
+    #map{
+        height: 90%;
+        width: 65%;
+    }
+    </style>
+    <script src="main.js"></script>
+  </head>
+  <body>
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBwUbhUwqMTuB-6L3xhufDrgxnGCmcsWpg&callback=initMap&libraries=drawing"></script>
+        <h2>Draw the Polygon & check point Exists in polygon or not</h2>
+        <div style="display: inline;">
+            <div id="map" style="float:left"></div>
+            <div style="float:right; width: 30%;">
+                <h4>Polygon Co-ordinates</h4>
+                <div>
+                    <textarea id="info" style="font-family: Arial; font-size: 14px; height: 70px;"></textarea>
+                </div>
+                <br>
+                <h4>Enter the lat & long here to check:</h4>
+                <form id="form1" runat="server">
+                    <div>
+                        <label>Lattitude</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      
+                        
+                        <input id="txtLattitude" type="text"><br>
+                            <label>Longitude</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input id="txtLongitude" type="text">
+                        <br>
+                        <br>
+                        <input style="background: green; color: white;" id="btnCheckPointExistence" onclick="return btnCheckPointExistence_onclick()" type="button" value="Check for point existence">
+                    </div>
+                </form>
+                <br>
+                <br>
+                <div>
+                    <button id="delete-button" onclick="return deleteSelectedShape()" style="color: white; background: red;">Delete Selected Shape</button>
+                </div>
+            </div>
+        </div>
+  </body>
+</html>
